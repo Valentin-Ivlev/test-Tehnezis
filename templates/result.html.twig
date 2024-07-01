@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Результаты сканирования изображений</h1>
+
+    <div class="container">
+        {% for row in images %}
+            <div class="row">
+                {% for image in row %}
+                    <div class="col-3">
+                        <div class="image-wrapper">
+                            <img src="{{ image }}" alt="Image" class="img-fluid">
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="report">
+        <p>На странице обнаружено {{ totalCount }} изображений на {{ totalSize|number_format(2, '.', ',') }} Мб</p>
+    </div>
+
+    <a href="{{ path('index') }}">Сканировать другую страницу</a>
+{% endblock %}

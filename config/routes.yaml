@@ -1,3 +1,11 @@
+index:
+    path: /
+    controller: App\Controller\ImageCrawlerController::index
+
+crawl:
+    path: /crawl
+    controller: App\Controller\ImageCrawlerController::crawl
+
 controllers:
     resource:
         path: ../src/Controller/
